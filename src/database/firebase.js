@@ -1,10 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth"; // Add Auth
-import { collection, getFirestore } from "firebase/firestore"; // Add Firestore
+import { collection, getFirestore, query, where, getDocs } from "firebase/firestore"; // Add Firestore
 import { getDatabase } from "firebase/database"; // Add Realtime Database
 import { getStorage } from "firebase/storage"; // Add Storage
-import { query, where, getDocs } from "firebase/firestore";
+
 
 const firebaseConfig = {
     apiKey: process.env.API_KEY,
@@ -16,7 +16,6 @@ const firebaseConfig = {
     appId: process.env.APP_ID,
     measurementId: process.env.MEASUREMENT_ID
 };
-
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);

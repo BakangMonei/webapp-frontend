@@ -7,17 +7,40 @@ const RegistrationPage = () => {
     const [password, setPassword] = useState("");
     const [displayName, setDisplayName] = useState("");
     const navigate = useNavigate();
+    const [response, setResponse] = useState(true);
+
+    // const handleSignUp = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         const response = await axios.post('http://localhost:8080/api/users/register', {
+    //             email,
+    //             password,
+    //             displayName,
+    //         });
+
+    //         if (response.status === 200 || response.status === 201) {
+    //             alert("Sign up successful");
+    //             navigate('/'); // Navigate to home or dashboard page after successful sign-up
+    //         } else {
+    //             console.error("Error signing up:", response.data.message);
+    //             alert(response.data.message);
+    //         }
+    //     } catch (error) {
+    //         console.error("Error signing up:", error.response?.data?.message || error.message);
+    //         alert(error.response?.data?.message || "Error signing up");
+    //     }
+    // };
+
+    // useEffect(() => {
+    //     // Any required setup or cleanup
+    // }, []);
 
     const handleSignUp = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8080/api/users/register', {
-                email,
-                password,
-                displayName,
-            });
+           
 
-            if (response.status === 200 || response.status === 201) {
+            if (email !== "" && password !== "" && displayName !== "") {
                 alert("Sign up successful");
                 navigate('/'); // Navigate to home or dashboard page after successful sign-up
             } else {
@@ -31,7 +54,8 @@ const RegistrationPage = () => {
     };
 
     useEffect(() => {
-        // Any required setup or cleanup
+        // Any required setup or cleanup?
+
     }, []);
 
     return (
